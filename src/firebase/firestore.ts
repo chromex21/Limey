@@ -20,10 +20,23 @@ export const COLLECTIONS = {
   CATEGORIES: "categories"
 };
 
+// Type definitions
+export interface TopicData {
+  title: string;
+  content: string;
+  authorId: string;
+  category: string;
+  tags: string[];
+  createdAt?: any;
+  updatedAt?: any;
+}
+
+export type TopicUpdateData = Partial<Omit<TopicData, 'createdAt'>>;
+
 // Example functions for Firestore operations
 
 // Create a new topic
-export async function createTopic(topicData: any) {
+export async function createTopic(topicData: TopicData) {
   try {
     const docRef = await addDoc(collection(db, COLLECTIONS.TOPICS), {
       ...topicData,
@@ -53,7 +66,7 @@ export async function getTopics() {
 }
 
 // Update a topic
-export async function updateTopic(topicId: string, updates: any) {
+export async function updateTopic(topicId: string, updates: TopicUpdateData) {
   try {
     const topicRef = doc(db, COLLECTIONS.TOPICS, topicId);
     await updateDoc(topicRef, {

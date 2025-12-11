@@ -3,8 +3,30 @@ import { ThumbsUp, MessageCircle, Clock } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { formatTimeAgo } from '../../data/mockData';
 
+export interface Author {
+  id: string;
+  name: string;
+  avatar: string;
+}
+
+export interface Content {
+  id: string;
+  type: 'topic' | 'article';
+  title: string;
+  content: string;
+  author: Author;
+  category: string;
+  tags: string[];
+  votes: number;
+  replies: number;
+  views: number;
+  createdAt: Date;
+  trending?: boolean;
+  readTime?: string;
+}
+
 interface ContentCardProps {
-  content: any;
+  content: Content;
 }
 
 export function ContentCard({ content }: ContentCardProps) {

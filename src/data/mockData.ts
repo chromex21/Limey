@@ -1,3 +1,5 @@
+import { Content } from '../components/ui/ContentCard';
+
 // Mock user data (replace with Firebase Auth in production)
 export const mockUser = {
   id: 'user_1',
@@ -7,11 +9,11 @@ export const mockUser = {
 };
 
 // Mock data for topics and articles
-export const mockData = {
+export const mockData: { topics: Content[] } = {
   topics: [
     {
       id: '1',
-      type: 'topic',
+      type: 'topic' as const,
       title: 'How to use the platform effectively',
       content: 'We will discover the ins and outs of the platform, from creating topic to engaging with community members',
       author: { id: '2', name: 'Alice Johnson', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alice' },
@@ -25,7 +27,7 @@ export const mockData = {
     },
     {
       id: '2',
-      type: 'topic',
+      type: 'topic' as const,
       title: "What's your favorite programming language?",
       content: "Vote on your favorite programming language in this poll and let's see which language the community prefers the most",
       author: { id: '3', name: 'Bob Smith', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Bob' },
@@ -39,7 +41,7 @@ export const mockData = {
     },
     {
       id: '3',
-      type: 'article',
+      type: 'article' as const,
       title: 'JavaScript Best Practices',
       content: 'In this article, we will discuss best practices for writing clean and efficient JavaScript code',
       author: { id: '4', name: 'Caro Williams', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Caro' },
@@ -54,7 +56,7 @@ export const mockData = {
     },
     {
       id: '4',
-      type: 'article',
+      type: 'article' as const,
       title: 'Designing a user-friendly interface',
       content: 'Learn the principles of creating intuitive and accessible user interfaces',
       author: { id: '5', name: 'Diana Lee', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Diana' },

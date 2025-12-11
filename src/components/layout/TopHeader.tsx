@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Search, Bell, MessageSquare } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { mockUser } from '../../data/mockData';

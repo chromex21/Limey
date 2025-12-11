@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import { mockData } from '../../data/mockData';
 
@@ -7,7 +6,7 @@ interface RightSmartPanelProps {
   setCurrentPage: (page: string) => void;
 }
 
-export function RightSmartPanel({ currentPage, setCurrentPage }: RightSmartPanelProps) {
+export function RightSmartPanel({ setCurrentPage }: RightSmartPanelProps) {
   const { theme } = useTheme();
   
   return (

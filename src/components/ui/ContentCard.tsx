@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ThumbsUp, MessageCircle, Clock } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { formatTimeAgo } from '../../data/mockData';

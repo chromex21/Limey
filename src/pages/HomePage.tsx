@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { mockData } from '../data/mockData';
 import { ContentCard } from '../components/ui/ContentCard';
 

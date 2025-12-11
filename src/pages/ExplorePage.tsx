@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { mockData } from '../data/mockData';
 import { ContentCard } from '../components/ui/ContentCard';

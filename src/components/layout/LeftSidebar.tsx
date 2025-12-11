@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Home, Compass, Grid, Bookmark, FileText, File, Settings, Moon, Sun, MessageCircle, MessageSquare } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 

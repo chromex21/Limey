@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { AuthProvider } from './context/AuthContext';
 import { TopHeader } from './components/layout/TopHeader';
 import { LeftSidebar } from './components/layout/LeftSidebar';
 import { RightSmartPanel } from './components/layout/RightSmartPanel';
@@ -28,10 +29,10 @@ function AppContent() {
         
         {/* Main Content */}
         <main className="flex-1 ml-64 mr-80 p-6">
-          {currentPage === 'home' && <HomePage selectedCategory={selectedCategory} />}
+          {currentPage === 'home' && <HomePage selectedCategory={selectedCategory} searchQuery={searchQuery} />}
           {currentPage === 'explore' && <ExplorePage />}
           {currentPage === 'categories' && <CategoriesPage setSelectedCategory={setSelectedCategory} setCurrentPage={setCurrentPage} />}
-          {currentPage === 'articles' && <ArticlesPage />}
+          {currentPage === 'articles' && <ArticlesPage searchQuery={searchQuery} />}
           {currentPage === 'create-topic' && <CreateTopicPage />}
           {currentPage === 'create-article' && <CreateArticlePage />}
         </main>
@@ -46,7 +47,9 @@ function AppContent() {
 export default function App() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
     </ThemeProvider>
   );
 }

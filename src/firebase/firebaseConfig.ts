@@ -6,16 +6,19 @@ import { getStorage } from "firebase/storage";
 // TODO: Replace with your Firebase project configuration
 // Get this from: Firebase Console > Project Settings > General > Your apps > SDK setup and configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDsTBR2zCmXs9scy_jHZvA2_2P7kiFRhSY",
+  authDomain: "limey-49eb8.firebaseapp.com",
+  databaseURL: "https://limey-49eb8-default-rtdb.firebaseio.com",
+  projectId: "limey-49eb8",
+  storageBucket: "limey-49eb8.firebasestorage.app",
+  messagingSenderId: "65425107614",
+  appId: "1:65425107614:web:925fdf10730f16c742298f",
+  measurementId: "G-LWKXBHE9K6"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 // Initialize Firebase services
 export const db = getFirestore(app);
